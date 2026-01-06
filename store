@@ -1,0 +1,179 @@
+<div class="seco2nd-vogue-faq">
+
+<style>
+.seco2nd-vogue-faq *{
+  box-sizing:border-box;
+}
+
+/* --- MONOCHROME ELEGANT BACKGROUND --- */
+.seco2nd-vogue-faq{
+  --black:#0a0a0a;
+  --white:#ffffff;
+  --text:#f5f5f5;
+  --muted:#bfbfbf;
+  --line:#2a2a2a;
+
+  /* black → soft white gradient */
+  background:linear-gradient(145deg, #000000 0%, #111111 40%, #1a1a1a 100%);
+  color:var(--text);
+
+  /* subtle noise texture effect */
+  background-blend-mode:overlay;
+
+  padding:65px 20px 85px;
+  font-family:"Inter", Arial, sans-serif;
+  letter-spacing:.2px;
+}
+
+/* --- TITLE --- */
+.seco2nd-vogue-faq .title{
+  text-align:center;
+  font-family:"Playfair Display", serif;
+  font-size:48px;
+  letter-spacing:.05em;
+  font-weight:900;           /* SUPER BOLD */
+  text-transform:uppercase;
+}
+
+/* subtitle */
+.seco2nd-vogue-faq .subtitle{
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  letter-spacing:.32em;
+  margin-top:6px;
+}
+
+/* divider line */
+.seco2nd-vogue-faq .divider{
+  width:100px;
+  height:1px;
+  background:linear-gradient(to right, transparent, var(--muted), transparent);
+  margin:30px auto 50px;
+  opacity:.6;
+}
+
+/* FAQ LIST */
+.seco2nd-vogue-faq .faq-wrap{
+  max-width:900px;
+  margin:0 auto;
+  border-top:1px solid var(--line);
+}
+
+/* item card */
+.seco2nd-vogue-faq .faq-item{
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.2));
+  transition:.3s;
+}
+
+.seco2nd-vogue-faq .faq-item:hover{
+  background:#0f0f0f;
+}
+
+/* question */
+.seco2nd-vogue-faq .faq-q{
+  padding:22px 8px;
+  cursor:pointer;
+  font-size:17px;
+  font-weight:600;
+  position:relative;
+}
+
+.seco2nd-vogue-faq .faq-q span{
+  color:var(--muted);
+  margin-right:6px;
+  font-weight:300;
+}
+
+/* plus/minus icon */
+.seco2nd-vogue-faq .faq-q::after{
+  content:"+";
+  position:absolute;
+  right:8px;
+  font-size:20px;
+}
+
+.seco2nd-vogue-faq .active .faq-q::after{
+  content:"–";
+}
+
+/* answer body */
+.seco2nd-vogue-faq .faq-a{
+  max-height:0;
+  overflow:hidden;
+  color:#e6e6e6;
+  line-height:1.75;
+  font-size:15px;
+  padding:0 8px;
+  transition:all .35s ease;
+}
+
+.seco2nd-vogue-faq .active .faq-a{
+  max-height:260px;
+  padding:0 8px 22px;
+}
+</style>
+
+<div class="title">Seco2nd_Brand</div>
+<div class="subtitle">FREQUENTLY ASKED QUESTIONS</div>
+<div class="divider"></div>
+
+<div class="faq-wrap">
+
+  <div class="faq-item">
+    <div class="faq-q"><span>01</span>What is Seco2nd_Brand?</div>
+    <div class="faq-a">
+      Seco2nd_Brand is a curated-preloved fashion brand offering authentic secondhand pieces with boutique-level quality standards.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span>02</span>Are all products authentic?</div>
+    <div class="faq-a">
+      Yes — every piece is carefully authenticated before listing. We do not sell replicas or counterfeit products.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span>03</span>What condition are the items in?</div>
+    <div class="faq-a">
+      Items are graded Like New, Excellent, or Good. Any visible flaws are honestly described and photographed clearly.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span>04</span>Can I return an item?</div>
+    <div class="faq-a">
+      Returns are accepted if the product significantly differs from the description. Not applicable for change-of-mind.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span>05</span>Which payments are accepted?</div>
+    <div class="faq-a">
+      All WooCommerce-supported payments including bank transfer, cards, and e-wallets depending on your region.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><span>06</span>How long is shipping?</div>
+    <div class="faq-a">
+      Orders dispatch within 24 hours after payment confirmation. Delivery typically takes 1–3 business days.
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+(function(){
+  const items = document.querySelectorAll(".seco2nd-vogue-faq .faq-item");
+  items.forEach(item=>{
+    item.addEventListener("click",()=>{
+      items.forEach(i=> i!==item && i.classList.remove("active"));
+      item.classList.toggle("active");
+    });
+  });
+})();
+</script>
