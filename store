@@ -1,170 +1,179 @@
-<div class="seco2nd-vogue-faq">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seco2nd_Brand | FAQs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-.seco2nd-vogue-faq *{
-  box-sizing:border-box;
-}
+  <!-- Optional Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
-/* --- MONOCHROME ELEGANT BACKGROUND --- */
-.seco2nd-vogue-faq{
-  --black:#0a0a0a;
-  --white:#ffffff;
-  --text:#f5f5f5;
-  --muted:#bfbfbf;
-  --line:#2a2a2a;
+  <style>
+    .seco2nd-vogue-faq *{
+      box-sizing:border-box;
+    }
 
-  /* black → soft white gradient */
-  background:linear-gradient(145deg, #000000 0%, #111111 40%, #1a1a1a 100%);
-  color:var(--text);
+    /* --- MONOCHROME ELEGANT BACKGROUND --- */
+    .seco2nd-vogue-faq{
+      --black:#0a0a0a;
+      --white:#ffffff;
+      --text:#f5f5f5;
+      --muted:#bfbfbf;
+      --line:#2a2a2a;
 
-  /* subtle noise texture effect */
-  background-blend-mode:overlay;
+      background:linear-gradient(145deg, #000000 0%, #111111 40%, #1a1a1a 100%);
+      color:var(--text);
+      padding:65px 20px 85px;
+      font-family:"Inter", Arial, sans-serif;
+      letter-spacing:.2px;
+    }
 
-  padding:65px 20px 85px;
-  font-family:"Inter", Arial, sans-serif;
-  letter-spacing:.2px;
-}
+    /* --- TITLE --- */
+    .seco2nd-vogue-faq .title{
+      text-align:center;
+      font-family:"Playfair Display", serif;
+      font-size:48px;
+      letter-spacing:.05em;
+      font-weight:900;
+      text-transform:uppercase;
+    }
 
-/* --- TITLE --- */
-.seco2nd-vogue-faq .title{
-  text-align:center;
-  font-family:"Playfair Display", serif;
-  font-size:48px;
-  letter-spacing:.05em;
-  font-weight:900;           /* SUPER BOLD */
-  text-transform:uppercase;
-}
+    .seco2nd-vogue-faq .subtitle{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.32em;
+      margin-top:6px;
+    }
 
-/* subtitle */
-.seco2nd-vogue-faq .subtitle{
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-  letter-spacing:.32em;
-  margin-top:6px;
-}
+    .seco2nd-vogue-faq .divider{
+      width:100px;
+      height:1px;
+      background:linear-gradient(to right, transparent, var(--muted), transparent);
+      margin:30px auto 50px;
+      opacity:.6;
+    }
 
-/* divider line */
-.seco2nd-vogue-faq .divider{
-  width:100px;
-  height:1px;
-  background:linear-gradient(to right, transparent, var(--muted), transparent);
-  margin:30px auto 50px;
-  opacity:.6;
-}
+    /* FAQ LIST */
+    .seco2nd-vogue-faq .faq-wrap{
+      max-width:900px;
+      margin:0 auto;
+      border-top:1px solid var(--line);
+    }
 
-/* FAQ LIST */
-.seco2nd-vogue-faq .faq-wrap{
-  max-width:900px;
-  margin:0 auto;
-  border-top:1px solid var(--line);
-}
+    .seco2nd-vogue-faq .faq-item{
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.2));
+      transition:.3s;
+    }
 
-/* item card */
-.seco2nd-vogue-faq .faq-item{
-  border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.2));
-  transition:.3s;
-}
+    .seco2nd-vogue-faq .faq-item:hover{
+      background:#0f0f0f;
+    }
 
-.seco2nd-vogue-faq .faq-item:hover{
-  background:#0f0f0f;
-}
+    .seco2nd-vogue-faq .faq-q{
+      padding:22px 8px;
+      cursor:pointer;
+      font-size:17px;
+      font-weight:600;
+      position:relative;
+    }
 
-/* question */
-.seco2nd-vogue-faq .faq-q{
-  padding:22px 8px;
-  cursor:pointer;
-  font-size:17px;
-  font-weight:600;
-  position:relative;
-}
+    .seco2nd-vogue-faq .faq-q span{
+      color:var(--muted);
+      margin-right:6px;
+      font-weight:300;
+    }
 
-.seco2nd-vogue-faq .faq-q span{
-  color:var(--muted);
-  margin-right:6px;
-  font-weight:300;
-}
+    .seco2nd-vogue-faq .faq-q::after{
+      content:"+";
+      position:absolute;
+      right:8px;
+      font-size:20px;
+    }
 
-/* plus/minus icon */
-.seco2nd-vogue-faq .faq-q::after{
-  content:"+";
-  position:absolute;
-  right:8px;
-  font-size:20px;
-}
+    .seco2nd-vogue-faq .active .faq-q::after{
+      content:"–";
+    }
 
-.seco2nd-vogue-faq .active .faq-q::after{
-  content:"–";
-}
+    .seco2nd-vogue-faq .faq-a{
+      max-height:0;
+      overflow:hidden;
+      color:#e6e6e6;
+      line-height:1.75;
+      font-size:15px;
+      padding:0 8px;
+      transition:all .35s ease;
+    }
 
-/* answer body */
-.seco2nd-vogue-faq .faq-a{
-  max-height:0;
-  overflow:hidden;
-  color:#e6e6e6;
-  line-height:1.75;
-  font-size:15px;
-  padding:0 8px;
-  transition:all .35s ease;
-}
+    .seco2nd-vogue-faq .active .faq-a{
+      max-height:260px;
+      padding:0 8px 22px;
+    }
 
-.seco2nd-vogue-faq .active .faq-a{
-  max-height:260px;
-  padding:0 8px 22px;
-}
-</style>
+    /* Responsive */
+    @media(max-width:768px){
+      .seco2nd-vogue-faq .title{
+        font-size:34px;
+      }
+    }
+  </style>
+</head>
 
-<div class="title">Seco2nd_Brand</div>
-<div class="subtitle">FREQUENTLY ASKED QUESTIONS</div>
-<div class="divider"></div>
+<body>
 
-<div class="faq-wrap">
+<section class="seco2nd-vogue-faq">
 
-  <div class="faq-item">
-    <div class="faq-q"><span>01</span>What is Seco2nd_Brand?</div>
-    <div class="faq-a">
-      Seco2nd_Brand is a curated-preloved fashion brand offering authentic secondhand pieces with boutique-level quality standards.
+  <div class="title">Seco2nd_Brand</div>
+  <div class="subtitle">FREQUENTLY ASKED QUESTIONS</div>
+  <div class="divider"></div>
+
+  <div class="faq-wrap">
+
+    <div class="faq-item">
+      <div class="faq-q"><span>01</span>What is Seco2nd_Brand?</div>
+      <div class="faq-a">
+        Seco2nd_Brand is a curated preloved fashion store offering authentic second-hand luxury items with carefully selected quality standards.
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-q"><span>02</span>Are all products authentic?</div>
-    <div class="faq-a">
-      Yes — every piece is carefully authenticated before listing. We do not sell replicas or counterfeit products.
+    <div class="faq-item">
+      <div class="faq-q"><span>02</span>Are all products authentic?</div>
+      <div class="faq-a">
+        Absolutely. Every item is thoroughly authenticated before being listed. We strictly do not sell replicas or counterfeit goods.
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-q"><span>03</span>What condition are the items in?</div>
-    <div class="faq-a">
-      Items are graded Like New, Excellent, or Good. Any visible flaws are honestly described and photographed clearly.
+    <div class="faq-item">
+      <div class="faq-q"><span>03</span>What condition are the items in?</div>
+      <div class="faq-a">
+        Items are graded as Like New, Excellent, or Good. Any signs of wear are clearly disclosed with detailed photos and descriptions.
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-q"><span>04</span>Can I return an item?</div>
-    <div class="faq-a">
-      Returns are accepted if the product significantly differs from the description. Not applicable for change-of-mind.
+    <div class="faq-item">
+      <div class="faq-q"><span>04</span>Can I return an item?</div>
+      <div class="faq-a">
+        Returns are only accepted if the product received significantly differs from the description provided. Returns for change of mind are not accepted.
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-q"><span>05</span>Which payments are accepted?</div>
-    <div class="faq-a">
-      All WooCommerce-supported payments including bank transfer, cards, and e-wallets depending on your region.
+    <div class="faq-item">
+      <div class="faq-q"><span>05</span>What payment methods are available?</div>
+      <div class="faq-a">
+        We support all WooCommerce-enabled payment methods including bank transfer, credit/debit cards, and selected e-wallets.
+      </div>
     </div>
-  </div>
 
-  <div class="faq-item">
-    <div class="faq-q"><span>06</span>How long is shipping?</div>
-    <div class="faq-a">
-      Orders dispatch within 24 hours after payment confirmation. Delivery typically takes 1–3 business days.
+    <div class="faq-item">
+      <div class="faq-q"><span>06</span>How long does shipping take?</div>
+      <div class="faq-a">
+        Orders are dispatched within 24 hours after payment confirmation. Estimated delivery time is 1–3 business days depending on location.
+      </div>
     </div>
-  </div>
 
-</div>
-</div>
+  </div>
+</section>
 
 <script>
 (function(){
@@ -177,3 +186,6 @@
   });
 })();
 </script>
+
+</body>
+</html>
